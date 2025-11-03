@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1>JavaScript Test</h1>
+    <button onclick="testFunction()">Test Button</button>
+    <button onclick="testQuestionBank()">Test Question Bank</button>
+    <div id="output"></div>
+
+    <script src="questions.js"></script>
+    <script>
+        console.log('Test script loading...');
+        
+        function testFunction() {
+            console.log('Test function called!');
+            document.getElementById('output').innerHTML = 'Test function works!';
+        }
+        
+        function testQuestionBank() {
+            console.log('Testing questionBank...');
+            if (typeof questionBank !== 'undefined') {
+                console.log('✅ questionBank loaded with', questionBank.length, 'questions');
+                document.getElementById('output').innerHTML = `✅ questionBank loaded with ${questionBank.length} questions`;
+            } else {
+                console.log('❌ questionBank not found');
+                document.getElementById('output').innerHTML = '❌ questionBank not found';
+            }
+        }
+        
+        console.log('Test script loaded');
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Button Test</title>
+</head>
+<body>
+    <h1>Simple Button Test</h1>
+    <button onclick="alert('Button works!')">Test Button</button>
+    <button onclick="testQuestionBank()">Test Question Bank</button>
+    <div id="status"></div>
+
+    <script src="questions.js"></script>
+    <script>
+        console.log('Simple test script loaded');
+        
+        function testQuestionBank() {
+            console.log('Testing questionBank...');
+            const status = document.getElementById('status');
+            
+            if (typeof questionBank !== 'undefined') {
+                console.log('✅ questionBank found with', questionBank.length, 'questions');
+                status.innerHTML = `✅ questionBank loaded: ${questionBank.length} questions`;
+                status.style.color = 'green';
+            } else {
+                console.log('❌ questionBank not found');
+                status.innerHTML = '❌ questionBank not found';
+                status.style.color = 'red';
+            }
+        }
+        
+        console.log('Simple test script complete');
+    </script>
+</body>
+</html>
