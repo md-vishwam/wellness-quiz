@@ -123,10 +123,10 @@ const questionBank = [
         category: "sound",
         difficulty: "easy",
         type: "mcq",
-        question: "Which instrument is commonly used in Tibetan sound healing?",
-        choices: ["Piano", "Singing bowls", "Guitar", "Flute"],
-        correct: 1,
-        explanation: "Tibetan singing bowls are traditional instruments used for sound healing and meditation practices."
+            question: "How do Tibetan singing bowls influence brainwave activity and relaxation?",
+            choices: ["Increase alertness", "Promote relaxation and synchronize brainwaves", "Cause headaches", "No effect"],
+            correct: 1,
+            explanation: "Tibetan singing bowls promote relaxation and can help synchronize brainwaves for a calming effect."
     },
     {
         id: 28,
@@ -173,20 +173,20 @@ const questionBank = [
         category: "sound",
         difficulty: "easy",
         type: "mcq",
-        question: "What does 'Hz' stand for in sound frequency?",
-        choices: ["Hertz", "High zone", "Harmonic", "Heavy"],
-        correct: 0,
-        explanation: "Hz stands for Hertz, the unit of frequency measuring cycles per second in sound waves."
+            question: "How do different sound frequencies (Hz) affect relaxation and stress levels in the human body?",
+            choices: ["Some frequencies promote relaxation", "All frequencies cause stress", "Frequencies have no effect", "Only high frequencies matter"],
+            correct: 0,
+            explanation: "Certain sound frequencies can promote relaxation and reduce stress in the body."
     },
     {
         id: 33,
         category: "sound",
         difficulty: "easy",
         type: "mcq",
-        question: "Which type of music is most commonly used for relaxation?",
-        choices: ["Heavy metal", "Classical or ambient", "Rap", "Pop"],
-        correct: 1,
-        explanation: "Classical, ambient, and nature sounds are most commonly used for relaxation and healing purposes."
+            question: "Listening to calming music can have what effect on heart rate and blood pressure?",
+            choices: ["Increase both", "Decrease both", "No effect", "Only affects heart rate"],
+            correct: 1,
+            explanation: "Calming music can help decrease heart rate and blood pressure, supporting relaxation."
     },
     {
         id: 34,
@@ -203,10 +203,10 @@ const questionBank = [
         category: "sound",
         difficulty: "easy",
         type: "mcq",
-        question: "Which instrument creates sound through metal vibration?",
-        choices: ["Drum", "Gong", "Flute", "Guitar"],
-        correct: 1,
-        explanation: "Gongs create healing sounds through the vibration of metal when struck."
+            question: "How do metal instruments like gongs and singing bowls impact physical tension and pain relief?",
+            choices: ["Increase tension", "Reduce tension and pain", "No effect", "Cause pain"],
+            correct: 1,
+            explanation: "Metal instruments like gongs and singing bowls can help reduce physical tension and pain."
     },
     {
         id: 36,
@@ -243,9 +243,9 @@ const questionBank = [
         category: "sound",
         difficulty: "medium",
         type: "numeric",
-        question: "What frequency (in Hz) is associated with the root chakra?",
-        correct: 396,
-        explanation: "396 Hz is the Solfeggio frequency associated with the root chakra and releasing fear and guilt."
+            question: "Exposure to low-frequency sounds (like 396 Hz) is believed to have what effect on emotional wellness?",
+            correct: 396,
+            explanation: "Low-frequency sounds are believed to help release fear and promote emotional wellness."
     },
     {
         id: 40,
@@ -292,10 +292,10 @@ const questionBank = [
         category: "sound",
         difficulty: "medium",
         type: "mcq",
-        question: "What is the principle behind crystal singing bowls?",
-        choices: ["They look pretty", "Quartz crystal vibrations create pure tones", "They're expensive", "They're louder than metal bowls"],
-        correct: 1,
-        explanation: "Crystal singing bowls are made from quartz crystal, which creates pure, sustained tones when struck."
+            question: "How do crystal singing bowls support relaxation and stress relief in the body?",
+            choices: ["Their vibrations promote relaxation and stress relief", "They cause headaches", "No effect", "Only for decoration"],
+            correct: 0,
+            explanation: "Crystal singing bowls produce vibrations that can promote relaxation and reduce stress."
     },
     {
         id: 45,
@@ -312,10 +312,10 @@ const questionBank = [
         category: "sound",
         difficulty: "hard",
         type: "mcq",
-        question: "What is the Schumann Resonance?",
-        choices: ["A musical instrument", "Earth's natural electromagnetic frequency (7.83 Hz)", "A type of singing", "A meditation technique"],
-        correct: 1,
-        explanation: "The Schumann Resonance is Earth's natural electromagnetic frequency at 7.83 Hz, which matches human alpha brainwaves."
+            question: "How can exposure to natural frequencies like 7.83 Hz (Schumann Resonance) affect human brainwaves and relaxation?",
+            choices: ["Promote relaxation and synchronize brainwaves", "Cause insomnia", "No effect", "Increase stress"],
+            correct: 0,
+            explanation: "Exposure to natural frequencies like 7.83 Hz can promote relaxation and synchronize human brainwaves."
     },
     {
         id: 47,
@@ -331,10 +331,10 @@ const questionBank = [
         category: "sound",
         difficulty: "hard",
         type: "mcq",
-        question: "What is cymatics?",
-        choices: ["A type of drum", "The study of visible sound vibrations and their patterns", "A meditation technique", "A musical scale"],
-        correct: 1,
-        explanation: "Cymatics is the study of visible sound and vibration patterns, showing how sound creates geometric forms in matter."
+            question: "How can sound vibrations influence physical structures and tissues in the human body?",
+            choices: ["They can affect tissue and cell structure", "No effect", "Only affect bones", "Only affect the skin"],
+            correct: 0,
+            explanation: "Sound vibrations can influence tissue and cell structure, supporting healing and wellness."
     },
     {
         id: 49,
@@ -351,10 +351,10 @@ const questionBank = [
         category: "sound",
         difficulty: "hard",
         type: "mcq",
-        question: "What is the relationship between sound and sacred geometry?",
-        choices: ["No relationship", "Sound vibrations create geometric patterns in matter", "Only applies to religious music", "It's purely theoretical"],
-        correct: 1,
-        explanation: "Sound vibrations create specific geometric patterns in matter, demonstrating the connection between sound and sacred geometry."
+            question: "How can sound vibrations support physical and mental harmony in the human body?",
+            choices: ["They help create harmony and balance", "No effect", "Only affect the mind", "Only affect the body"],
+            correct: 0,
+            explanation: "Sound vibrations can help create harmony and balance in both the body and mind."
     },
 
     // BREATHWORK QUESTIONS (25 total: 13 easy, 7 medium, 5 hard)
