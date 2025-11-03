@@ -4,266 +4,119 @@
 // 8+ numeric questions for tiebreakers
 
 const questionBank = [
-    // YOGA QUESTIONS (25 total: 12 easy, 8 medium, 5 hard)
+    // YOGA QUESTIONS (Body-focused)
     {
         id: 1,
         category: "yoga",
         difficulty: "easy",
         type: "mcq",
-        question: "What does the word 'yoga' mean in Sanskrit?",
-        choices: ["To unite or join", "To stretch", "To breathe", "To meditate"],
+        question: "Which muscle group is primarily stretched in the Downward Dog (Adho Mukha Svanasana) pose?",
+        choices: ["Hamstrings", "Quadriceps", "Biceps", "Triceps"],
         correct: 0,
-        explanation: "Yoga comes from the Sanskrit root 'yuj' meaning to unite or join, referring to the union of mind, body, and spirit."
+        explanation: "Downward Dog stretches the hamstrings, calves, and back muscles."
     },
     {
         id: 2,
         category: "yoga",
         difficulty: "easy",
         type: "mcq",
-        question: "Which of these is NOT one of the traditional limbs of yoga?",
-        choices: ["Asana (postures)", "Pranayama (breathing)", "Cardio exercise", "Dhyana (meditation)"],
-        correct: 2,
-        explanation: "The eight limbs of yoga include ethical guidelines, postures, breathing, and meditation practices, but not modern cardio exercise."
+        question: "What is the main benefit of practicing twists (like Ardha Matsyendrasana) for the digestive system?",
+        choices: ["Improves blood circulation", "Stimulates digestion", "Strengthens the heart", "Increases lung capacity"],
+        correct: 1,
+        explanation: "Twists help stimulate digestion and massage abdominal organs."
     },
     {
         id: 3,
         category: "yoga",
         difficulty: "easy",
         type: "mcq",
-        question: "What is the most commonly practiced type of yoga in the West?",
-        choices: ["Kundalini", "Hatha", "Ashtanga", "Iyengar"],
-        correct: 1,
-        explanation: "Hatha yoga, focusing on physical postures and breathing, is the most widely practiced form in Western countries."
+        question: "Which yoga pose is best known for strengthening the core muscles?",
+        choices: ["Plank (Phalakasana)", "Child’s Pose (Balasana)", "Cobra Pose (Bhujangasana)", "Tree Pose (Vrikshasana)"],
+        correct: 0,
+        explanation: "Plank pose is excellent for building core strength."
     },
     {
         id: 4,
         category: "yoga",
         difficulty: "easy",
         type: "mcq",
-        question: "In yoga, what does 'asana' refer to?",
-        choices: ["Breathing techniques", "Physical postures", "Meditation", "Chanting"],
+        question: "Which part of the body is most engaged during Warrior II (Virabhadrasana II)?",
+        choices: ["Shoulders", "Legs and hips", "Wrists", "Neck"],
         correct: 1,
-        explanation: "Asana literally means 'seat' and refers to the physical postures practiced in yoga."
+        explanation: "Warrior II strengthens and stretches the legs and hips."
     },
     {
         id: 5,
         category: "yoga",
         difficulty: "easy",
         type: "mcq",
-        question: "Which pose is known as the 'king of all poses'?",
-        choices: ["Downward Dog", "Warrior I", "Headstand", "Child's Pose"],
-        correct: 2,
-        explanation: "Headstand (Sirsasana) is often called the king of poses due to its numerous benefits for circulation and mental clarity."
+        question: "What effect does deep diaphragmatic breathing (Pranayama) have on the nervous system?",
+        choices: ["Activates fight-or-flight response", "Promotes relaxation and reduces stress", "Increases adrenaline", "Raises blood pressure"],
+        correct: 1,
+        explanation: "Diaphragmatic breathing activates the parasympathetic nervous system, promoting relaxation."
     },
     {
         id: 6,
         category: "yoga",
-        difficulty: "easy",
+        difficulty: "medium",
         type: "mcq",
-        question: "What is Savasana?",
-        choices: ["A standing pose", "A breathing technique", "Corpse pose/final relaxation", "A type of meditation"],
-        correct: 2,
-        explanation: "Savasana, or corpse pose, is the final relaxation pose typically done at the end of yoga practice."
+        question: "Which yoga posture helps to open the chest and improve lung capacity?",
+        choices: ["Bridge Pose (Setu Bandhasana)", "Forward Fold (Uttanasana)", "Mountain Pose (Tadasana)", "Cat-Cow Pose (Marjaryasana/Bitilasana)"],
+        correct: 0,
+        explanation: "Bridge Pose opens the chest and improves lung capacity."
     },
     {
         id: 7,
         category: "yoga",
-        difficulty: "easy",
+        difficulty: "medium",
         type: "mcq",
-        question: "Which yoga practice focuses on breath control?",
-        choices: ["Asana", "Pranayama", "Mudra", "Bandha"],
+        question: "Practicing balance poses like Tree Pose (Vrikshasana) primarily improves which bodily function?",
+        choices: ["Digestion", "Balance and proprioception", "Hearing", "Vision"],
         correct: 1,
-        explanation: "Pranayama is the yogic practice of breath control and breathing techniques."
+        explanation: "Balance poses improve proprioception and stability."
     },
     {
         id: 8,
         category: "yoga",
-        difficulty: "easy",
+        difficulty: "medium",
         type: "mcq",
-        question: "What does 'Namaste' traditionally mean?",
-        choices: ["Hello", "Goodbye", "The divine in me honors the divine in you", "Thank you"],
-        correct: 2,
-        explanation: "Namaste is a respectful greeting meaning 'the divine in me honors the divine in you.'"
+        question: "Which yoga pose is recommended for relieving lower back pain?",
+        choices: ["Child’s Pose (Balasana)", "Warrior I (Virabhadrasana I)", "Chair Pose (Utkatasana)", "Crow Pose (Bakasana)"],
+        correct: 0,
+        explanation: "Child’s Pose gently stretches the lower back and relieves tension."
     },
     {
         id: 9,
         category: "yoga",
-        difficulty: "easy",
+        difficulty: "medium",
         type: "mcq",
-        question: "Which of these is a benefit of regular yoga practice?",
-        choices: ["Improved flexibility", "Reduced stress", "Better balance", "All of the above"],
-        correct: 3,
-        explanation: "Regular yoga practice provides numerous benefits including improved flexibility, reduced stress, and better balance."
+        question: "What is the main physical benefit of practicing Sun Salutations (Surya Namaskar)?",
+        choices: ["Improves cardiovascular health", "Increases flexibility and strength", "Enhances memory", "Reduces appetite"],
+        correct: 1,
+        explanation: "Sun Salutations increase flexibility, strength, and warm up the body."
     },
     {
         id: 10,
         category: "yoga",
-        difficulty: "easy",
-        type: "mcq",
-        question: "What is the traditional greeting position in yoga?",
-        choices: ["Hands on hips", "Arms overhead", "Prayer position at heart center", "Arms at sides"],
-        correct: 2,
-        explanation: "Prayer position (Anjali mudra) at heart center is the traditional greeting position in yoga."
-    },
-    {
-        id: 11,
-        category: "yoga",
-        difficulty: "easy",
-        type: "mcq",
-        question: "Which pose is commonly called 'Child's Pose'?",
-        choices: ["Balasana", "Tadasana", "Vrikshasana", "Bhujangasana"],
-        correct: 0,
-        explanation: "Balasana is the Sanskrit name for Child's Pose, a resting posture in yoga."
-    },
-    {
-        id: 12,
-        category: "yoga",
-        difficulty: "easy",
-        type: "mcq",
-        question: "What should you focus on during yoga practice?",
-        choices: ["Competing with others", "Perfect alignment only", "Your breath and internal awareness", "Looking good"],
-        correct: 2,
-        explanation: "Yoga emphasizes internal awareness and breath focus rather than external competition or appearance."
-    },
-    {
-        id: 13,
-        category: "yoga",
-        difficulty: "medium",
-        type: "mcq",
-        question: "How many main chakras are there in traditional yoga philosophy?",
-        choices: ["5", "7", "9", "12"],
-        correct: 1,
-        explanation: "Traditional yoga recognizes seven main chakras or energy centers along the spine."
-    },
-    {
-        id: 14,
-        category: "yoga",
-        difficulty: "medium",
-        type: "mcq",
-        question: "What is the difference between Hatha and Vinyasa yoga?",
-        choices: ["No difference", "Hatha is faster-paced", "Vinyasa links poses with breath in flowing sequences", "Hatha requires more flexibility"],
-        correct: 2,
-        explanation: "Vinyasa yoga links poses together with breath in flowing sequences, while Hatha typically holds poses longer."
-    },
-    {
-        id: 15,
-        category: "yoga",
-        difficulty: "medium",
-        type: "mcq",
-        question: "Who is considered the father of modern yoga?",
-        choices: ["B.K.S. Iyengar", "Patanjali", "K. Pattabhi Jois", "T. Krishnamacharya"],
-        correct: 3,
-        explanation: "T. Krishnamacharya is often called the father of modern yoga, having taught many influential yoga masters."
-    },
-    {
-        id: 16,
-        category: "yoga",
-        difficulty: "medium",
-        type: "mcq",
-        question: "What does the Sanskrit term 'bandha' mean?",
-        choices: ["Breathing technique", "Energy lock or seal", "Meditation posture", "Chanting practice"],
-        correct: 1,
-        explanation: "Bandha refers to energy locks or muscular contractions used to direct energy in yoga practice."
-    },
-    {
-        id: 17,
-        category: "yoga",
-        difficulty: "medium",
-        type: "mcq",
-        question: "In which ancient text are the eight limbs of yoga outlined?",
-        choices: ["Bhagavad Gita", "Yoga Sutras of Patanjali", "Hatha Yoga Pradipika", "Upanishads"],
-        correct: 1,
-        explanation: "The Yoga Sutras of Patanjali outline the eight-limbed path (Ashtanga) of yoga."
-    },
-    {
-        id: 18,
-        category: "yoga",
-        difficulty: "medium",
-        type: "numeric",
-        question: "How many traditional yoga sutras did Patanjali compile?",
-        correct: 196,
-        explanation: "Patanjali compiled 196 sutras (aphorisms) that form the foundational text of yoga philosophy."
-    },
-    {
-        id: 19,
-        category: "yoga",
-        difficulty: "medium",
-        type: "mcq",
-        question: "What is the primary focus of Yin yoga?",
-        choices: ["Building muscle strength", "Increasing heart rate", "Holding poses for 3-5 minutes to target deep tissues", "Advanced acrobatic poses"],
-        correct: 2,
-        explanation: "Yin yoga involves holding passive poses for extended periods to target deep connective tissues."
-    },
-    {
-        id: 20,
-        category: "yoga",
-        difficulty: "medium",
-        type: "mcq",
-        question: "Which breathing technique involves alternate nostril breathing?",
-        choices: ["Kapalabhati", "Nadi Shodhana", "Bhastrika", "Ujjayi"],
-        correct: 1,
-        explanation: "Nadi Shodhana is the alternate nostril breathing technique used to balance the nervous system."
-    },
-    {
-        id: 21,
-        category: "yoga",
         difficulty: "hard",
         type: "mcq",
-        question: "What does 'Samadhi' represent in yoga philosophy?",
-        choices: ["Physical flexibility", "The highest state of consciousness/enlightenment", "A type of breathing", "Standing poses"],
+        question: "Which joint is most mobilized during the practice of Lotus Pose (Padmasana)?",
+        choices: ["Knee", "Hip", "Elbow", "Shoulder"],
         correct: 1,
-        explanation: "Samadhi is the eighth and final limb of yoga, representing the highest state of consciousness and spiritual absorption."
-    },
-    {
-        id: 22,
-        category: "yoga",
-        difficulty: "hard",
-        type: "mcq",
-        question: "In traditional yoga, what are the five Koshas?",
-        choices: ["Types of breathing", "The five sheaths or layers of being", "Yoga poses", "Meditation techniques"],
-        correct: 1,
-        explanation: "The five Koshas are the layers of human existence: physical, energetic, mental, wisdom, and bliss bodies."
-    },
-    {
-        id: 23,
-        category: "yoga",
-        difficulty: "hard",
-        type: "mcq",
-        question: "What is the purpose of practicing the Yamas and Niyamas?",
-        choices: ["To increase flexibility", "Ethical and moral guidelines for living", "To master difficult poses", "To improve breathing"],
-        correct: 1,
-        explanation: "Yamas and Niyamas are ethical restraints and observances that form the foundation of yogic living."
-    },
-    {
-        id: 24,
-        category: "yoga",
-        difficulty: "hard",
-        type: "numeric",
-        question: "According to traditional yoga philosophy, how many years does it take to master pranayama?",
-        correct: 12,
-        explanation: "Traditional texts suggest it takes 12 years of dedicated practice to master pranayama (breath control)."
-    },
-    {
-        id: 25,
-        category: "yoga",
-        difficulty: "hard",
-        type: "mcq",
-        question: "What is the ultimate goal of Kundalini yoga?",
-        choices: ["Physical fitness", "Awakening dormant spiritual energy", "Stress relief", "Flexibility improvement"],
-        correct: 1,
-        explanation: "Kundalini yoga aims to awaken the dormant spiritual energy at the base of the spine and raise it through the chakras."
+        explanation: "Lotus Pose requires significant hip mobility."
     },
 
     // SOUND HEALING QUESTIONS (25 total: 12 easy, 8 medium, 5 hard)
+    // ...existing code...
     {
         id: 26,
         category: "sound",
         difficulty: "easy",
         type: "mcq",
-        question: "What frequency is known as the 'healing frequency'?",
-        choices: ["432 Hz", "528 Hz", "440 Hz", "639 Hz"],
-        correct: 1,
-        explanation: "528 Hz is often called the 'love frequency' or 'healing frequency' and is believed to promote healing and transformation."
+            question: "Which sound frequency is believed to help reduce stress and promote relaxation in the human body?",
+            choices: ["528 Hz", "1000 Hz", "50 Hz", "200 Hz"],
+            correct: 0,
+            explanation: "528 Hz is often used in sound healing to promote relaxation and stress reduction."
     },
     {
         id: 27,
@@ -310,10 +163,10 @@ const questionBank = [
         category: "sound",
         difficulty: "easy",
         type: "mcq",
-        question: "Which ancient culture is known for using sound in healing rituals?",
-        choices: ["Only modern cultures", "Egyptians", "Greeks", "All ancient cultures"],
-        correct: 3,
-        explanation: "Most ancient cultures including Egyptians, Greeks, Native Americans, and others used sound in healing rituals."
+            question: "How can sound vibrations affect the human body during a sound bath?",
+            choices: ["Increase muscle tension", "Promote relaxation and reduce pain", "Cause hearing loss", "None of the above"],
+            correct: 1,
+            explanation: "Sound vibrations can help relax muscles, reduce pain, and promote overall wellness."
     },
     {
         id: 32,
@@ -340,10 +193,10 @@ const questionBank = [
         category: "sound",
         difficulty: "easy",
         type: "mcq",
-        question: "What is the 'AUM' or 'OM' sound considered to be?",
-        choices: ["A random noise", "The primordial sound of the universe", "A musical note", "A breathing technique"],
-        correct: 1,
-        explanation: "OM/AUM is considered the primordial sound of the universe in many spiritual traditions."
+            question: "Chanting 'OM' during meditation is believed to have what effect on the body?",
+            choices: ["Increase blood pressure", "Calm the nervous system", "Cause headaches", "None of the above"],
+            correct: 1,
+            explanation: "Chanting OM can help calm the nervous system and promote relaxation."
     },
     {
         id: 35,
@@ -380,10 +233,10 @@ const questionBank = [
         category: "sound",
         difficulty: "medium",
         type: "mcq",
-        question: "What are the Solfeggio frequencies?",
-        choices: ["Random musical notes", "Ancient musical scales with healing properties", "Modern pop music", "Noise frequencies"],
-        correct: 1,
-        explanation: "Solfeggio frequencies are ancient musical scales believed to have specific healing and spiritual properties."
+            question: "How do Solfeggio frequencies affect the human body?",
+            choices: ["No effect", "May promote relaxation and healing", "Cause muscle cramps", "Increase appetite"],
+            correct: 1,
+            explanation: "Solfeggio frequencies are believed to promote relaxation and healing in the body."
     },
     {
         id: 39,
@@ -488,10 +341,10 @@ const questionBank = [
         category: "sound",
         difficulty: "hard",
         type: "mcq",
-        question: "Which ancient Greek philosopher wrote about music's healing properties?",
-        choices: ["Socrates", "Plato", "Aristotle", "Pythagoras"],
-        correct: 3,
-        explanation: "Pythagoras studied the mathematical relationships in music and its healing effects on the body and soul."
+            question: "How can music therapy benefit the human body?",
+            choices: ["Improve mood and reduce pain", "Cause insomnia", "Increase blood pressure", "None of the above"],
+            correct: 0,
+            explanation: "Music therapy can improve mood, reduce pain, and support overall wellness."
     },
     {
         id: 50,
@@ -505,6 +358,7 @@ const questionBank = [
     },
 
     // BREATHWORK QUESTIONS (25 total: 13 easy, 7 medium, 5 hard)
+    // ...existing code...
     {
         id: 51,
         category: "breath",
@@ -755,6 +609,7 @@ const questionBank = [
     },
 
     // MEDITATION QUESTIONS (25 total: 13 easy, 7 medium, 5 hard)
+    // ...existing code...
     {
         id: 76,
         category: "meditation",
