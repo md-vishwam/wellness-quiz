@@ -1708,12 +1708,15 @@
             const numQuestions = settings.numQuestions;
             let selectedQuestions = [];
             
+            // Create a copy of question bank to avoid modifying the original
+            let availableQuestions = [...questionBank];
+            
             // Ensure at least one question from each category if possible
             const categories = ['yoga', 'sound', 'breath', 'meditation'];
             const questionsByCategory = {};
             
             categories.forEach(cat => {
-                questionsByCategory[cat] = questionBank.filter(q => q.category === cat);
+                questionsByCategory[cat] = availableQuestions.filter(q => q.category === cat);
             });
 
             // Try to get at least one from each category
@@ -1723,21 +1726,20 @@
                         const randomQ = questionsByCategory[cat][Math.floor(Math.random() * questionsByCategory[cat].length)];
                         selectedQuestions.push(randomQ);
                         // Remove selected question from available pool
-                        const index = questionBank.indexOf(randomQ);
-                        questionBank.splice(index, 1);
+                        const index = availableQuestions.indexOf(randomQ);
+                        availableQuestions.splice(index, 1);
                     }
                 });
             }
 
             // Fill remaining slots randomly
-            while (selectedQuestions.length < numQuestions && questionBank.length > 0) {
-                const randomIndex = Math.floor(Math.random() * questionBank.length);
-                selectedQuestions.push(questionBank[randomIndex]);
-                questionBank.splice(randomIndex, 1);
+            while (selectedQuestions.length < numQuestions && availableQuestions.length > 0) {
+                const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+                selectedQuestions.push(availableQuestions[randomIndex]);
+                availableQuestions.splice(randomIndex, 1);
             }
 
-            // Restore question bank
-            questionBank.push(...selectedQuestions);
+            // No need to restore question bank since we used a copy
             return selectedQuestions;
         }
 
