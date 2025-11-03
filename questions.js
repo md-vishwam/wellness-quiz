@@ -242,10 +242,11 @@ const questionBank = [
         id: 39,
         category: "sound",
         difficulty: "medium",
-        type: "numeric",
-            question: "Exposure to low-frequency sounds (like 396 Hz) is believed to have what effect on emotional wellness?",
-            correct: 396,
-            explanation: "Low-frequency sounds are believed to help release fear and promote emotional wellness."
+        type: "mcq",
+        question: "Exposure to low-frequency sounds (like 396 Hz) is believed to have what effect on emotional wellness?",
+        choices: ["Help release fear and promote emotional balance", "Increase anxiety", "Cause headaches", "No effect on emotions"],
+        correct: 0,
+        explanation: "Low-frequency sounds like 396 Hz are believed to help release fear and promote emotional wellness."
     },
     {
         id: 40,

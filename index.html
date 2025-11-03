@@ -457,24 +457,13 @@
             <h1>Wellness Quiz</h1>
             <h2 style="text-align: center; margin-bottom: 30px;">How well do you know the human body?</h2>
             
-            <div id="user-info-section" style="margin-bottom: 30px;">
-                <div class="input-group">
-                    <label for="player-name">First Name (Optional):</label>
-                    <input type="text" id="player-name" placeholder="Enter your first name">
-                </div>
-                <div class="input-group">
-                    <label for="player-email">Email (Optional):</label>
-                    <input type="email" id="player-email" placeholder="Enter your email">
-                </div>
-            </div>
-
             <div style="text-align: center;">
                 <button class="btn btn-large" onclick="startQuiz()" aria-label="Start the wellness quiz">Start Quiz</button>
-                <button class="btn btn-secondary" onclick="showSettings()" aria-label="Open settings">Settings</button>
-                <button class="btn btn-secondary" onclick="showHelp()" aria-label="Show help information">Help</button>
-                <button class="btn btn-secondary" onclick="showAdmin()" aria-label="Admin panel">Admin</button>
-                <div style="margin-top: 20px; font-size: 0.9rem; color: #666;">
-                    If QR/phone doesn't open, please use the laptop here — network may be intermittent.
+                
+                <div style="margin-top: 30px;">
+                    <button class="btn btn-secondary" onclick="showSettings()" aria-label="Open settings">Settings</button>
+                    <button class="btn btn-secondary" onclick="showHelp()" aria-label="Show help information">Help</button>
+                    <button class="btn btn-secondary" onclick="showAdmin()" aria-label="Admin panel">Admin</button>
                 </div>
             </div>
         </div>
@@ -526,7 +515,7 @@
             <div id="question-review" style="margin: 30px 0;"></div>
 
             <div style="text-align: center;">
-                <button class="btn btn-success" onclick="generateCertificate()" aria-label="Generate printable certificate">Get Certificate</button>
+                <button class="btn btn-success" onclick="requestCertificate()" aria-label="Generate printable certificate">Get Certificate</button>
                 <button class="btn btn-secondary" onclick="restartQuiz()" aria-label="Start a new quiz">Take Another Quiz</button>
                 <button class="btn btn-secondary" onclick="exportResults()" aria-label="Export quiz results">Export Results</button>
             </div>
@@ -616,6 +605,27 @@
     </div>
 
     <!-- Admin Modal -->
+    <!-- Certificate Request Modal -->
+    <div id="certificate-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCertificateModal()" aria-label="Close certificate request">&times;</span>
+            <h2>🎓 Get Your Certificate</h2>
+            <p>Please provide your details to generate a personalized certificate:</p>
+            <div class="input-group">
+                <label for="cert-name">Full Name:</label>
+                <input type="text" id="cert-name" placeholder="Enter your full name">
+            </div>
+            <div class="input-group">
+                <label for="cert-email">Email:</label>
+                <input type="email" id="cert-email" placeholder="Enter your email address">
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn" onclick="generateCertificateFromModal()" aria-label="Generate certificate">Generate Certificate</button>
+                <button class="btn btn-secondary" onclick="closeCertificateModal()" aria-label="Cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <div id="admin-modal" class="modal hidden">
         <div class="modal-content">
             <span class="close-btn" onclick="closeAdmin()" aria-label="Close admin panel">&times;</span>
@@ -998,13 +1008,11 @@
 
         // Finish quiz and show results
         function finishQuiz() {
-            // Store quiz result
-            const playerName = document.getElementById('player-name').value || 'Anonymous';
-            const playerEmail = document.getElementById('player-email').value || '';
-            
+            // Store quiz result with temporary placeholder values
+            // User details will be collected when they request certificate
             const result = {
-                name: playerName,
-                email: playerEmail,
+                name: 'Participant',
+                email: '',
                 score: score,
                 totalQuestions: currentQuiz.length,
                 answers: userAnswers,
@@ -1102,14 +1110,40 @@
         }
 
         // Certificate functionality
-        function generateCertificate() {
-            const playerName = document.getElementById('player-name').value || 'Participant';
+        function requestCertificate() {
+            console.log('requestCertificate() called');
+            document.getElementById('certificate-modal').classList.remove('hidden');
+        }
+
+        function closeCertificateModal() {
+            document.getElementById('certificate-modal').classList.add('hidden');
+            document.getElementById('cert-name').value = '';
+            document.getElementById('cert-email').value = '';
+        }
+
+        function generateCertificateFromModal() {
+            const playerName = document.getElementById('cert-name').value;
+            const playerEmail = document.getElementById('cert-email').value;
+            
+            if (!playerName.trim()) {
+                alert('Please enter your full name');
+                return;
+            }
+            
+            if (!playerEmail.trim()) {
+                alert('Please enter your email address');
+                return;
+            }
+            
+            // Generate the certificate
             const currentDate = new Date().toLocaleDateString();
             
             document.getElementById('certificate-name').textContent = playerName;
             document.getElementById('certificate-score').textContent = `${score}/${currentQuiz.length}`;
             document.getElementById('certificate-date').textContent = currentDate;
             
+            // Close modal and show certificate
+            closeCertificateModal();
             document.getElementById('results-screen').classList.add('hidden');
             document.getElementById('certificate-screen').classList.remove('hidden');
         }
@@ -1129,9 +1163,9 @@
             document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
             document.getElementById('welcome-screen').classList.remove('hidden');
             
-            // Clear form
-            document.getElementById('player-name').value = '';
-            document.getElementById('player-email').value = '';
+            // Clear certificate modal form if open
+            document.getElementById('cert-name').value = '';
+            document.getElementById('cert-email').value = '';
         }
 
         // Settings modal functions
@@ -1369,11 +1403,7 @@
             loadQuestionBank();
             updateUserInfoVisibility();
             
-            // Focus on first input
-            if (settings.collectUserInfo) {
-                document.getElementById('player-name').focus();
-            }
-            
+            // App is ready for user interaction
             console.log('✅ App initialization complete');
         }
 
