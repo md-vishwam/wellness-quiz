@@ -454,6 +454,9 @@
     <div class="container">
         <!-- Welcome Screen -->
         <div id="welcome-screen" class="screen">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="SRMD YOGA LOGO.jpg" alt="SRMD Yoga Australia" style="max-width: 300px; height: auto;">
+            </div>
             <h1>Wellness Quiz</h1>
             <h2 style="text-align: center; margin-bottom: 30px;">How well do you know the human body?</h2>
             
@@ -519,11 +522,21 @@
                 <button class="btn btn-secondary" onclick="restartQuiz()" aria-label="Start a new quiz">Take Another Quiz</button>
                 <button class="btn btn-secondary" onclick="exportResults()" aria-label="Export quiz results">Export Results</button>
             </div>
+
+            <!-- QR Code Section -->
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8f9ff; border-radius: 15px; border: 2px solid #667eea;">
+                <h3 style="color: #667eea; margin-bottom: 20px;">🧘‍♀️ Free Yoga Session</h3>
+                <p style="margin-bottom: 20px; font-size: 1.1rem;">To Receive Free Yoga Session, scan the QR Code</p>
+                <img src="YogaFreeRegistration.png" alt="Scan QR Code for Free Yoga Session" style="max-width: 200px; height: auto; border: 2px solid #ddd; border-radius: 10px;">
+            </div>
         </div>
 
         <!-- Certificate Screen -->
         <div id="certificate-screen" class="screen hidden">
             <div id="certificate-content" style="text-align: center; padding: 40px; border: 3px solid #667eea;">
+                <div style="margin-bottom: 20px;">
+                    <img src="SRMD YOGA LOGO.jpg" alt="SRMD Yoga Australia" style="max-width: 200px; height: auto;">
+                </div>
                 <h1 style="color: #667eea; margin-bottom: 30px;">Certificate of Completion</h1>
                 <h2>Wellness Quiz</h2>
                 <p style="font-size: 1.2rem; margin: 30px 0;">This certifies that</p>
@@ -1112,6 +1125,13 @@
         // Certificate functionality
         function requestCertificate() {
             console.log('requestCertificate() called');
+            
+            // Check if user scored perfect score (10/10)
+            if (score < 10) {
+                alert(`Sorry, certificates are only available for perfect scores (10/10). You scored ${score}/${currentQuiz.length}. Keep learning and try again!`);
+                return;
+            }
+            
             document.getElementById('certificate-modal').classList.remove('hidden');
         }
 
@@ -1132,6 +1152,13 @@
             
             if (!playerEmail.trim()) {
                 alert('Please enter your email address');
+                return;
+            }
+            
+            // Double-check perfect score requirement
+            if (score < 10) {
+                alert('Certificate generation failed: Perfect score (10/10) required.');
+                closeCertificateModal();
                 return;
             }
             
@@ -1450,5 +1477,10 @@
         // Call accessibility function
         ensureAccessibility();
     </script>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #ddd; color: #666; font-size: 0.9rem;">
+        SRMD Yoga, An Initiative of SRMD Australia, an ACNC Registered Charity Organization
+    </footer>
 </body>
 </html>
